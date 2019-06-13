@@ -1,0 +1,1 @@
+export { LikeBox } from './LikeBox';
