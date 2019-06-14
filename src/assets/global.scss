@@ -34,3 +34,19 @@ img {
     margin: 0 auto;
     padding: 0 2rem;
 }
+
+.btn {
+    display: inline-block;
+    font: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+    padding: 0;
+    cursor: pointer;
+    
+    &:focus {
+        outline: 0.5rem auto #4d90fe;
+    }
+}
+
+

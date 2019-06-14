@@ -11,6 +11,9 @@ export class ImageBox extends Component {
         return (
             <div className="gallery-item" tabIndex="0">
                 <img src={ image } className="gallery-image" alt=""/>
+                <div className="gallery-item-type">
+                    <span className="visually-hidden">Gallery</span><i className="fas fa-clone" aria-hidden="true"></i>
+                </div>
                 <div className="gallery-item-info">
                 <ul>
                     <LikeBox likes={ likes } />

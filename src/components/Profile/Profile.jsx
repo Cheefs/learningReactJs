@@ -2,34 +2,40 @@ import './Profile.scss';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { ProfilePhoto } from '../ProfilePhoto';
+import { ProfileUser } from '../ProfileUser';
+import { ProfileStatus } from '../ProfileStatus';
+import { ProfileBio } from '../ProfileBio';
+
 export class Profile extends Component {
     render() {
+        const image = 'https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces';
+        const name = 'janedoe_';
+        const status = {
+            posts: 164,
+            followers: 188,
+            following: 206
+        };
+
+        const bio = {
+            name: 'Jane Doe',
+            desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷 ✈ 🏕',
+        }
+
         return (
             <div className="profile">
-                
-                <div className="profile-image">
-                    <img src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces" alt=""/>
-                </div>
+                <ProfilePhoto image={ image } />
+                <ProfileUser name={ bio.name } />
+                <ProfileStatus { ...status } />
+                <ProfileBio { ...bio }/>
 
-                <div className="profile-user-settings">
-                <h1 className="profile-user-name">janedoe_</h1>
-                <button className="btn profile-edit-btn">Edit Profile</button>
-                <button className="btn profile-settings-btn" aria-label="profile settings"><i className="fas fa-cog"
-                    aria-hidden="true"></i></button>
-                </div>
-                <div className="profile-stats">
-                <ul>
-                    <li><span className="profile-stat-count">164</span> posts</li>
-                    <li><span className="profile-stat-count">188</span> followers</li>
-                    <li><span className="profile-stat-count">206</span> following</li>
-                </ul>
-                </div>
-
-                <div className="profile-bio">
-                <p><span className="profile-real-name">Jane Doe</span> Lorem ipsum dolor sit, amet consectetur adipisicing elit
-                    📷✈️🏕️</p>
-                </div>
           </div>
         ); 
     }
+}
+
+Profile.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.object,
 }
