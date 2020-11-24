@@ -13,8 +13,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: cd simplePage
-    - run: npm install
+    - run: cd ./simplePage && npm install
     - run: npm test
       env:
         CI: true
